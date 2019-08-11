@@ -1,3 +1,3 @@
 # miniflux
 
-An example of running a Miniflux server with PostgreSQL and Pulumi.
+An example of running a [Miniflux](https://miniflux.app/) RSS server with [PostgreSQL](https://www.postgresql.org/) and [Pulumi](https://pulumi.com/).
