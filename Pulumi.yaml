@@ -1,0 +1,3 @@
+name: miniflux
+runtime: nodejs
+description: An example of running a Miniflux server with Pulumi.
