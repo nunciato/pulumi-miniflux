@@ -21,7 +21,7 @@ template:
 
         db_username:
             description: The username of the PostgreSQL account to be used by the Miniflux service.
-            secret: true
+            default: miniflux
 
         db_password:
             description: The PostgreSQL user's password.
