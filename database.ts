@@ -18,8 +18,7 @@ export class MinifluxDatabase {
 
         const db = new aws.rds.Instance("db", {
             engine: "postgres",
-            instanceClass: "db.t2.micro",
-            allocatedStorage: 10,
+            instanceClass: "db.t3.micro",
             dbSubnetGroupName: dbSubnets.id,
             vpcSecurityGroupIds: securityGroupIds,
             name: databaseName,

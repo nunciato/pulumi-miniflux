@@ -1,3 +1,28 @@
 name: miniflux
 runtime: nodejs
-description: An example of running a Miniflux server with Pulumi.
+description: A Miniflux RSS service with a PostgreSQL backend.
+template:
+    config:
+        aws:region:
+            description: The AWS region to deploy into.
+            default: us-west-2
+
+        miniflux:db_name:
+            description: The name of the PostgreSQL database to be used by Miniflux.
+            default: miniflux
+
+        miniflux:admin_username:
+            description: The username to use for the Miniflux service administrator account.
+            default: admin
+
+        miniflux:admin_password:
+            description: The Miniflux administrator's password.
+            secret: true
+
+        miniflux:db_username:
+            description: The username of the PostgreSQL account to be used by the Miniflux service.
+            secret: true
+
+        miniflux:db_password:
+            description: The PostgreSQL user's password.
+            secret: true
