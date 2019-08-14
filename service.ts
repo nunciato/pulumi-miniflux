@@ -10,7 +10,7 @@ export class MinifluxService {
     constructor(database: MinifluxDatabase, adminUsername: string, adminPassword: string) {
 
         const networkGroup = new awsx.elasticloadbalancingv2.NetworkTargetGroup("group", { port: 8080 });
-        const miniflux = networkGroup.createListener("listener", { port: 80 });
+        const listener = networkGroup.createListener("listener", { port: 80 });
 
         const service = new awsx.ecs.FargateService("service", {
             desiredCount: 2,
@@ -19,7 +19,7 @@ export class MinifluxService {
                     service: {
                         image: "miniflux/miniflux:latest",
                         portMappings: [
-                            miniflux
+                            listener
                         ],
                         environment: [
                             {
@@ -48,6 +48,6 @@ export class MinifluxService {
             }
         });
 
-        this.endpoint = miniflux.endpoint.hostname;
+        this.endpoint = listener.endpoint.hostname;
     }
 }

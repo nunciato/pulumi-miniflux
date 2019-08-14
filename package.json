@@ -1,7 +1,15 @@
 {
-    "name": "aws-typescript",
+    "name": "pulumi-miniflux",
+    "version": "0.0.1",
+    "description": "A Pulumi program for running Miniflux and PostgreSQL.",
+    "author": "Christian Nunciato",
+    "license": "MIT",
+    "scripts": {
+        "prepublish": "tsc"
+    },
     "devDependencies": {
-        "@types/node": "latest"
+        "@types/node": "latest",
+        "typescript": "^3.5.3"
     },
     "dependencies": {
         "@pulumi/pulumi": "latest",
