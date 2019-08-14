@@ -9,7 +9,7 @@ export class MinifluxService {
 
     constructor(database: MinifluxDatabase, adminUsername: string, adminPassword: string) {
 
-        const networkGroup = new awsx.elasticloadbalancingv2.NetworkTargetGroup("group", { port: 8080 });
+        const networkGroup = new awsx.elasticloadbalancingv2.NetworkTargetGroup("miniflux", { port: 8080 });
         const listener = networkGroup.createListener("listener", { port: 80 });
 
         const service = new awsx.ecs.FargateService("service", {
