@@ -17,7 +17,6 @@ jobs:
         export PATH="$PATH:$HOME/.pulumi/bin"
         npm install
         pulumi login
-        pulumi stack init dev || true
         pulumi stack select dev
         pulumi config refresh
         pulumi preview --non-interactive
